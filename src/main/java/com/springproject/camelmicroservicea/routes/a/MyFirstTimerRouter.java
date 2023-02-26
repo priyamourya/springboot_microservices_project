@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDateTime;
 
 
-//@Component
+@Component
 public class MyFirstTimerRouter extends RouteBuilder {
     @Autowired
     private GetCurrentTimeBean getCurrentTimeBean;
@@ -40,20 +40,20 @@ public class MyFirstTimerRouter extends RouteBuilder {
     }
 }
 
-//@Component
+@Component
 class GetCurrentTimeBean {
     public String getCurrentTime() {
         return "Time now is " + LocalDateTime.now();
     }
 }
-//@Component
+@Component
 class SimpleLoggingProcessingComponent {
     private Logger logger= (Logger) LoggerFactory.getLogger(SimpleLoggingProcessingComponent.class);
     public void process(String message) {
         logger.info("SimpleLoggingProcessComponent {}",message);
     }
 }
-//@Component
+@Component
 class SimpleLoggingProcessor implements Processor {
     private Logger logger= (Logger) LoggerFactory.getLogger(SimpleLoggingProcessingComponent.class);
     @Override
